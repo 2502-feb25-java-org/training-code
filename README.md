@@ -45,16 +45,16 @@ update JAVA_HOME accordingly, as well as give them mvn, and plops Eclipse into S
   * it's always good to read and manage markdowns.
   
 #Scoop and git commands:
---> pwd
---> ls, dir, tree \fast
---> mkdir 'folder'
---> install touch 
---> sccop touch index.html
---> git clone 'url' (choose the folder to configure the workspace)
---> git add 'files'
---> git commit -m 'messgae'
---> git status
---> git push
---> when change happes in git server:
-		-> Git pull
-		-> fetch
+- pwd
+- ls, dir, tree \fast
+- mkdir 'folder'
+- install touch 
+- sccop touch index.html
+- git clone 'url' (choose the folder to configure the workspace)
+- git add 'files'
+- git commit -m 'messgae'
+- git status
+- git push
+- when change happes in git server:
+		- Git pull
+		- fetch
