@@ -15,3 +15,10 @@ color:green
 li{
 color:orange
 }
+table, thead, tbody td{
+	width: 50%;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	border-radius: 0.2px
+}
