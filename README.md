@@ -1,81 +1,42 @@
 # training-code
 This is a java training repo, used for code base, projects, notes.
-Main-Batch
 
-#Useful Links
+## Environment Setup
+** [github](https://github.com)
+* Create an account
+  * We will use this for version control, class examples, and submission of your assignments
+  
+### Useful Links
+* [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+* [Git Basics](https://youtu.be/0fKg7e37bQE)
+* [Git Team Basics](https://youtu.be/oFYyTZwMyAg)
 
-Git Cheat Sheet
-Git Basics
-Git Team Basics
+*The most common laptops are Windows PCs. Where MacOS and Linux systems can use package managers, Windows prefers its own GUI wizards. The following guide attempts to introduce Windows users to the command-line without requiring virtual machines, Windows Subsystem for Linux, or Git-Bash.*
 
+## Windows Package Management
+Chocolatey, Scoop, Nuget, and many more package management tools are now available on Windows. We will start with Scoop for its simplicity.
 
-#Environment Setup
+-First, open PowerShell (Right click on Start) and enter:
+>Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
+-This allows downloaded or local scripts to run. Confirm all changes and then enter:
+>iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
+Scoop will be installed to the $HOME directory (`C:/Users/{$USER}`). All apps installed through scoop can be found in `$HOME\scoop\apps` from now on. Scoop will also set environment variables where needed, and does not require an elevated Administrator PowerShell session.
 #github
 
-www.github,com
-Create an account
-We will use this for version control, class examples, and submission of your assignments
+To add useful repositories, enter:
+```
+scoop bucket add java
+scoop bucket add extras
+scoop install git ojdkbuild8 maven eclipse-jee
+```
+This sets you up for Week 1 and 2 for Java batch. Even if you have older versions of Java or only a JRE, it will 
+update JAVA_HOME accordingly, as well as give them mvn, and plops Eclipse into Start Menu.
 
-
-
-#Slack
-
-www.slack.com
-Create a slack account.
-We will use this for communications between the group outside of work hours. Hell, even during.
-
-
-
-#AT THIS POINT USE SLACK AND MESSAGE ME THE FOLLOWING
-
-#Github username
-
-#JDK
-
-x64 for 64 bit systems, x86 for 32 bit systems
-Set environment variables
-
-set 'path' to have directory of 'bin' folder for JDK (eg ..\java\jdk_version\bin)
-set JAVA_HOME -> \java\jdk_version
-
-
-
-
-
-#Java IDE - Spring Tool Suite
-
-Make sure you get the version that corresponds to your operating system! (eg 64 bit vs 32 bit)
-
-
-
-#Oracle11g
-
-This will be the dominant SQL database that we use. Restricted to Windows OS only
-
-
-
-#SQL Developer
-
-This will be the IDE we use for SQL development.
-Do NOT download the package with the JDK included. It'll just cause a mess...
-
-
-
-#Maven
-
-Extract to your C drive (Download the latest maven version that is a bin.zip)
-After extracting, set the following environment variables
-
-M2_HOME -> set to the root folder of maven
-M2 -> set to %M2_HOME%\bin
-Add %M2% to your 'path' variable
-
-
-
-
-
-#Hacker Rank
-
-Good source of practice. Use it often for practice. Of course, if you still have assigned work to do, that work takes precedence.
+* [Slack](https://slack.com)
+  * www.slack.com
+  * Create a slack account.
+  * We will use this for communications between the group outside of work hours. Hell, even during.
+* [Hacker Rank](https://www.hackerrank.com/)
+  * Good source of practice. Use it often for practice. Of course, if you still have assigned work to do, that work takes precedence.
