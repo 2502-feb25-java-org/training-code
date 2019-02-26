@@ -43,3 +43,18 @@ update JAVA_HOME accordingly, as well as give them mvn, and plops Eclipse into S
   * Good source of practice. Use it often for practice. Of course, if you still have assigned work to do, that work takes precedence.
 * [learn about md files](https://guides.github.com/features/mastering-markdown/)
   * it's always good to read and manage markdowns.
+  
+#Scoop and git commands:
+--> pwd
+--> ls, dir, tree \fast
+--> mkdir 'folder'
+--> install touch 
+--> sccop touch index.html
+--> git clone 'url' (choose the folder to configure the workspace)
+--> git add 'files'
+--> git commit -m 'messgae'
+--> git status
+--> git push
+--> when change happes in git server:
+		-> Git pull
+		-> fetch
