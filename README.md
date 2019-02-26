@@ -27,6 +27,7 @@ Scoop will be installed to the $HOME directory (`C:/Users/{$USER}`). All apps in
 
 To add useful repositories, enter:
 ```
+scoop install git
 scoop bucket add java
 scoop bucket add extras
 scoop install git ojdkbuild8 maven eclipse-jee
@@ -40,3 +41,5 @@ update JAVA_HOME accordingly, as well as give them mvn, and plops Eclipse into S
   * We will use this for communications between the group outside of work hours. Hell, even during.
 * [Hacker Rank](https://www.hackerrank.com/)
   * Good source of practice. Use it often for practice. Of course, if you still have assigned work to do, that work takes precedence.
+* [learn about md files](https://guides.github.com/features/mastering-markdown/)
+  * it's always good to read and manage markdowns.
