@@ -14,7 +14,7 @@ This is a java training repo, used for code base, projects, notes.
 *The most common laptops are Windows PCs. Where MacOS and Linux systems can use package managers, Windows prefers its own GUI wizards. The following guide attempts to introduce Windows users to the command-line without requiring virtual machines, Windows Subsystem for Linux, or Git-Bash.*
 
 ## Windows Package Management
-Chocolatey, Scoop, Nuget, and many more package management tools are now available on Windows. We will start with Scoop for its simplicity.
+Chocolatey, Scoop, Nuget, and many more package management tools are now available on Windows. We will start with [Scoop](https://mikateach.com/a-better-way-to-install-application-on-windows/) for its simplicity.
 
 -First, open PowerShell (Right click on Start) and enter:
 >Set-ExecutionPolicy RemoteSigned -scope CurrentUser
@@ -27,10 +27,10 @@ Scoop will be installed to the $HOME directory (`C:/Users/{$USER}`). All apps in
 
 To add useful repositories, enter:
 ```
-scoop install git
+scoop install 7zip git
 scoop bucket add java
 scoop bucket add extras
-scoop install git ojdkbuild8 maven eclipse-jee
+scoop install vscode ojdkbuild8 maven eclipse-jee
 ```
 This sets you up for Week 1 and 2 for Java batch. Even if you have older versions of Java or only a JRE, it will 
 update JAVA_HOME accordingly, as well as give them mvn, and plops Eclipse into Start Menu.
