@@ -7,8 +7,11 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA compatible" content="IE-Edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<!--script src="C:/java/javalearning/training-code/01-Basics/html/index.js" type="text/javascript">
-</script-->
+	<script src="C:/java/javalearning/training-code/01-Basics/Scripts/index.js" type="text/javascript">
+</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<link href="C:/java/javalearning/training-code/01-Basics/html/index.css" rel="stylesheet" type="text/css" />
 	<style>
 		/* body{  
@@ -22,42 +25,113 @@
 	Hello World
 
 	Good bye world!!
-	<div>
-		<!-- block elements -verticals div, p, li, ol, ul -->
-		<!-- inline elements strong, blockquote, emphais, u, img, br -->
-		<p>This is the Java Full stack training bootcamp</p>
-		<p>Make sure to bring your own laptops during the bootcamps</p>
 
-		<strong>Technologies:</strong>
-				<ol>
-					<li class="yellow">Html</li>
-					<li class="yellow">CSS</li>
-					<li id="javascript" class="green">JavaScript</li>
-					<li id="java" class="green">Java</li>
-				</ol>
-				<table>
-					<!--ctrl k + d -->
-					<thead>
-						<th>course</th>
-						<th>duration</th>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Java</td>
-							<td>10 weeks</td>
-						</tr>
-						<tr>
-							<td>.Net</td>
-							<td>9 weeks</td>
-						</tr>
-						<tr>
+	<div class="container">
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<img alt="Image Not found"
+								src="https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/codelikeaboss-1024x536.jpg"
+								width="100" length="100" />
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="Contact.html">Contact</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								LogIn/SignUp
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#Login">LogIn(Existing User)</a>
+								<a class="dropdown-item" href="#SignUp">SignUp(New User)</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#AdminLogIn">Admin LogIn</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="row">
+				<div class="col">
+					<!-- block elements -verticals div, p, li, ol, ul -->
+					<!-- inline elements strong, blockquote, emphais, u, img, br -->
+					<p>This is the <mark>Java Full stack</mark> training bootcamp</p>
+					<p>Make sure to bring your own laptops during the bootcamps</p>
+
+					<strong>Technologies:</strong>
+					<ol>
+						<li class="yellow">Html</li>
+						<li class="yellow">CSS</li>
+						<li id="javascript" class="green">JavaScript</li>
+						<li id="java" class="green">Java</li>
+					</ol>
+					<table>
+						<!--ctrl k + d -->
+						<thead>
+							<th>course</th>
+							<th>duration</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Java</td>
+								<td>10 weeks</td>
+							</tr>
+							<tr>
+								<td>.Net</td>
+								<td>9 weeks</td>
+							</tr>
+							<tr>
 								<td>Pega</td>
 								<td>6 weeks</td>
 							</tr>
-					</tbody>
-				</table>
-				
+						</tbody>
+					</table>
+				</div>
+				<div class="col">
+					<video controls=true src="https://addpipe.com/sample_vid/short.mp4" width="500" height="500"
+						poster="poster.png">
+						<p>Your browser doesn't support HTML5 video. Here is a <a
+								href="https://addpipe.com/sample_vid/short.mp4">link to the video</a> instead.</p>
+					</video>
+					<!-- <source src="https://www.youtube.com/embed/DPnqb74Smug"> -->
+					<!-- <source src="rabbit320.webm" type="video/webm"> -->
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="row">
+				<div class="col">
+					<figure>
+						<img
+							src="data:image/png;base64,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">
+						<figcaption>Revature Pic 1</figcaption>
+					</figure>
+				</div>
+			</div>
+		</footer>
 	</div>
+
 </body>
 
 </html>
