@@ -3,29 +3,61 @@
 <html lang=en-US>
 
 <head>
-	<title>Sigh up Page</title>
+    <title>Sign up Page</title>
 </head>
 
 <body>
-<form action="" method="get" class="form-example">
-    <fieldset>
-        <legend>basic sign up</legend>
-        <div class="form-example">
-          <label for="name">Enter your name: </label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <div class="form-example">
-          <label for="email">Enter your email: </label>
-          <input type="email" name="email" id="email" required>
-        </div>
-        <div class="form-example">
-                <label for="password">Enter your password: </label>
-                <input type="password" name="password" id="email" required>
-              </div>
-        <div class="form-example">
-          <input type="submit" value="Subscribe!">
-        </div>
-    </fieldset>
+    <header>
+        <nav>
+            <img alt="Image Not found"
+                src="https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/codelikeaboss-1024x536.jpg"
+                width="100" length="100" />
+            <a href="index.html">Home</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="Sign Up.html">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <form action="url" method="post">
+            <fieldset>
+                <legend>Basic sign up </legend>
+                <div>
+                    <label for="name"></label>Enter your name: </label>
+                    <input type="text" name="name" placeholder="Name" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Enter your email: </label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="password">Enter your password: </label>
+                    <input type="password" name="password" id="email" required>
+                </div>
+                <div>
+                    <label for="phone">Enter your Phone: </label>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Personal Info</legend>
+                <div>
+                    <label for="Age">Age</label>
+                    <input type="number" name="age" min=16 max=120 id="age" required>
+                </div>
+                <div>
+                    <label for="gender">Gender :
+                        <label for="male" >Male<input type="radio" name="gender" id="male" /></label>
+                        <label for="female">Female<input type="radio" name="gender" id="female" /> </label>
+                        <label for="others">Others<input type="radio" name="gender" id="others" /></label>
+                    </label>
+                </div>
+            </fieldset>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
         </form>
-        </body>
-        </html>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
