@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #outer {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #middle {
+            width: 50%;
+            height: 50%;
+            position: relative;
+            top: 25%;
+            left: 25%;
+            background-color: green;
+        }
+
+        #inner {
+            width: 50%;
+            height: 50%;
+            position: relative;
+            top: 25%;
+            left: 25%;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        //Event bubbling is the concept that applies when the HTML document has nested elements.
+        window.onload = function () {
+            //The optional cascade rule provides some flexibility in how the events move through nested DOM elements
+            /*This parameter allows you to specify the cascading or bubbling effect of the event—that is to
+                say, in which order the event processing occurs. The click event for each div has an event listener
+                assigned.*/
+            //true: The order of the event processing has reversed to be cascading instead of bubbling.
+            document.getElementById("outer").addEventListener("click", outerDivClick, false);
+            document.getElementById("middle").addEventListener("click", middleDivClick, false);
+            document.getElementById("inner").addEventListener("click", innerDivClick, false);
+            document.getElementById("clearButton").addEventListener("click", clearList);
+        }
+        function outerDivClick() {
+            appendText("outer Div Clicked");
+        }
+        function middleDivClick() {
+            appendText("middle Div Clicked");
+        }
+        function innerDivClick() {
+            appendText("inner Div Clicked");
+           window.event.cancelBubble = true;
+           event.stopPropagation();
+           
+        }
+        function appendText(s) {
+            var li = document.createElement("li");
+            li.innerText = s;
+            document.getElementById("eventOrder").appendChild(li);
+        }
+        function clearList() {
+            var ol = document.createElement("ol");
+            ol.id = "eventOrder";
+            document.getElementById("body").replaceChild(ol, document.
+                getElementById("eventOrder"));
+        }
+        //cancel an event 
+        /*window.onload = function () {
+var a = document.getElementById("aLink");
+a.onclick = OverrideAnchorClick;
+}
+function OverrideAnchorClick() {
+//do custom logic for the anchor
+window.event.returnValue = false;
+//or
+//return false;//cancelling an event
+}*/
+
+    </script>
+</head>
+<body id="body">
+    <div id="outer">
+        <div id="middle">
+            <div id="inner">
+            </div>
+        </div>
+    </div>
+    <ol id="eventOrder"> </ol>
+    <button type="button" id="clearButton">Clear</button>
+</body>
+</html>

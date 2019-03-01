@@ -1,5 +1,5 @@
 'use strict';
-
+alert('hu');
 // this won't work unless the script is loaded after the "body" node is created. 
 //alert(document.body.innerHTML);
 //document.body.style.backgroundColor = 'blue';
@@ -29,49 +29,25 @@
 // all we really need is the elements to exist in the DOM and not be null
 // DOMContentLoaded event fires sooner
 
-var table = document.getElementById("the-table");
+/*var table = document.getElementById("the-table");
 var tableAttrs = table.attributes; // Node/Element interface
 console.log(tableAttrs)
 for (var i = 0; i < tableAttrs.length; i++) {
     // HTMLTableElement interface: border attribute
-    if (tableAttrs[i].nodeName.toLowerCase() == "border") 
+    if (tableAttrs[i].nodeName.toLowerCase() == "border")
         table.border = "5px";
-        table.border = "solid";    
+    table.border = "solid";
 }
+*/
 
-
-function storeSearch(){
-    var searchBox=document.getElementById("searchbox").value;
-    sessionStorage.search=searchBox;
+function storeSearch() {
+    var searchBox = document.getElementById("searchbox").value;
+    sessionStorage.search = searchBox;
 }
-function loadOldSearch(){
-    var searchBox=document.getElementById("searchbox");
-    searchBox.value=sessionStorage.search;
+function loadOldSearch() {
+    var searchBox = document.getElementById("searchbox");
+    searchBox.value = sessionStorage.search;
 }
-
-
-
-
-
-
-
-
-
-
-// HTMLTableElement interface: summary attribute
-table.summary = "note: increased border";
-
-
-/*window.addEventListener('DOMContentLoaded', () => {
-    let header = document.getElementById('header-text');
-    let colA = document.getElementById('col-a');
-
-    // we have getElementById, getElementsByClassName, getElementsByTagName
-    // we also have querySelector (to get the first matching element)
-    //   according to CSS selector syntax.
-    // and querySelectorAll (to get all matching elements)
-
-document.querySelector('#header-text');*/
 
 //The DOMContentLoaded event will fire as soon as the DOM hierarchy has been fully constructed, the 
 //load event will do it when all the images and sub-frames have finished loading.
