@@ -36,9 +36,12 @@
                 say, in which order the event processing occurs. The click event for each div has an event listener
                 assigned.*/
             //true: The order of the event processing has reversed to be cascading instead of bubbling.
-            document.getElementById("outer").addEventListener("click", outerDivClick, false);
-            document.getElementById("middle").addEventListener("click", middleDivClick, false);
-            document.getElementById("inner").addEventListener("click", innerDivClick, false);
+            document.getElementById("outer").
+            addEventListener("click", outerDivClick, true);
+            document.getElementById("middle").
+            addEventListener("click", middleDivClick, true);
+            document.getElementById("inner").
+            addEventListener("click", innerDivClick, true);
             document.getElementById("clearButton").addEventListener("click", clearList);
         }
         function outerDivClick() {
@@ -49,8 +52,8 @@
         }
         function innerDivClick() {
             appendText("inner Div Clicked");
-           window.event.cancelBubble = true;
-           event.stopPropagation();
+           //window.event.cancelBubble = true;
+          // event.stopPropagation();
            
         }
         function appendText(s) {
