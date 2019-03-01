@@ -11,7 +11,7 @@ Topics include:
 * Bootstrap framework
 
 
-## Topics in Detail
+## JavaScript Topics in Detail
 * Intro to JavaScript
   * Data types
   * Variable scopes
