@@ -1,5 +1,5 @@
 'use strict';
-alert('hu');
+
 // this won't work unless the script is loaded after the "body" node is created. 
 //alert(document.body.innerHTML);
 //document.body.style.backgroundColor = 'blue';
@@ -40,15 +40,36 @@ for (var i = 0; i < tableAttrs.length; i++) {
 }
 */
 
-function storeSearch() {
+/*function storeSearch() {
     var searchBox = document.getElementById("searchbox").value;
     sessionStorage.search = searchBox;
 }
 function loadOldSearch() {
     var searchBox = document.getElementById("searchbox");
     searchBox.value = sessionStorage.search;
-}
+}*/
 
 //The DOMContentLoaded event will fire as soon as the DOM hierarchy has been fully constructed, the 
 //load event will do it when all the images and sub-frames have finished loading.
 //http://web.archive.org/web/20150405114023/http://ie.microsoft.com/testdrive/HTML5/DOMContentLoaded/Default.html
+
+window.addEventListener('DOMContentLoaded',()=>{
+    let header=document.getElementById("header-text");
+    let colA=document.getElementById("col-a");
+
+    let clickCounter=0;
+    
+    header.addEventListener('click',()=>{
+        clickCounter++;
+        header.textContent=`DOM changed the text (clicked ${clickCounter}) times`;
+        colA.innerHTML='<em>col</em> <u>A</u>';
+    })
+
+    colA.addEventListener('mouseover',()=>{
+        let footerElement=document.createElement('h6');
+        footerElement.textContent="&copy; reserved 2019";
+        document.body.appendChild(footerElement);
+});
+
+
+});
