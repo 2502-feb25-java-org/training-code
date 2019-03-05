@@ -1,3 +1,9 @@
+drop database tsql
+create database tsql
+
+RESTORE database [tsql] FROM URL = 
+   'https://tsqlstoragefile.blob.core.windows.net/testcontainer/TSQL.bak'
+
 use TSQL
 /*
 Numeric data types such as int, tinyint, bigint, float, real etc.
