@@ -177,6 +177,7 @@ nick.sayName();
 function Student(name, age, fingers, school) {
   this.school = school;
   this.__proto__ = new Person(name, age, fingers);
+
 }
 
 // the way property access works in JS is, if we try to access
@@ -187,6 +188,8 @@ function Student(name, age, fingers, school) {
 
 let student = new Student('Bill', 50, 10, 'UW');
 student.fingers = 12;
+//student.prototype.NewMethod //old school way of doing prototyping
+//student.NewMethod=function(){}
 console.log(student);
 console.log(student.name);
 
