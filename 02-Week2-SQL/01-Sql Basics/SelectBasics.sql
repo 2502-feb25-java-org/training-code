@@ -90,13 +90,19 @@ order by StartDate
 
 -- GROUP BY CLAUSE
 
+select ProductID, specialofferid,OrderQty
+from Sales.SalesOrderDetail
+where ProductID=779
+
 select ProductID,sum(OrderQty) as totalQty from [Sales].[SalesOrderDetail]
 group by ProductID
 order by ProductID
 
 select ProductID, SpecialOfferID, sum(OrderQty) as totalByOrderQty
 from Sales.SalesOrderDetail as sod
+--where sum(OrderQty)>100
 group by SpecialOfferID, ProductID
+having sum(OrderQty)>100
 order by SpecialOfferID, ProductID
 
 sp_help 'sales.salesorderdetail'
