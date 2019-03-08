@@ -76,11 +76,38 @@ drop table Music.Albums
 
 truncate table Music.Artist
 
+--insert using a select command
 insert into Music.Artist(artistName,age,activeSince,isAlive ) 
 (select artistName,age,activeSince,isAlive 
  from Artist_Archive) 
 
+--Bulk Insert
+ insert into Music.Artist (artistName,activeSince,age,isAlive)
+ values
+ ('Iron Maiden', '1975-12-25',40,1),
+ ('AC/DC', '1973-01-11',45,1),
+ ('Buddy Rich','1919-01-01',90,0)
+
  select * from Music.Artist
 
- insert into Music.Albums 
- values('Jal',10,'1995-06-08',2,1)
+ insert into Music.Albums (albumName,numofSongs,releaseDate,artistid,genreId)
+ values('coldplay',15,'1995-06-08',2,1)
+
+ ALTER TABLE [Music].[Albums] ALTER COLUMN  artistId int NULL
+ ALTER TABLE [Music].[Albums]
+DROP Constraint FK_Album_Artist
+GO
+
+--to allow to add the foreign key values
+ALTER TABLE [Music].[Albums]
+ADD CONSTRAINT [New_FK_Album_Artist]
+FOREIGN KEY (artistId) REFERENCES Music.Artist(artistId)
+ON DELETE CASCADE 
+ON UPDATE CASCADE
+GO 
+
+ select * from Music.albums
+
+ update Music.albums
+ set artistId=1 where 
+ genreid=1
