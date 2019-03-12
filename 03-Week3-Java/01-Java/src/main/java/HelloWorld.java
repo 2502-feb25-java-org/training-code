@@ -10,9 +10,9 @@ class HelloWorld{
 		try{
 			int argslength=args.length;
 			if(argslength>0)
-				System.out.println("Hello World !);
+				System.out.println("Hello World !");
 			else
-				throw new IOException("No CLI commands ");
+				throw new IOException("No CLI commands");
 		}
 		catch(ArrayIndexOutOfBoundsException ex)
 		{
