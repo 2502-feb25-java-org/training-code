@@ -22,9 +22,18 @@ class Greeter {
         this.name = name;
     }
 }
+class Address{
+    String addressLine1;
+    String addressLine2;
+    String city;
+    String zipcode, state, country="US";
+}
+
 abstract class Person{
     String name;//variables
     String ssn;
+    //String address;
+    Address address;//HAS-A relationship
     final String SPECIEID="HOMOSAPIENS" ;//constant
     public Person(String name, String ssn){
         this.name=name;
