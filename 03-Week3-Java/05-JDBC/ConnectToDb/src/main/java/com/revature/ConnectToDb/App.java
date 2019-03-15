@@ -1,16 +1,19 @@
-package com.revature.JDBCDemo;
+package com.revature.ConnectToDb;
 //1. Import packages 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/**
+ * Hello world!
+ *
+ */
 public class App 
 {
     public static void main( String[] args )
     {
-        String hostName = "restaurantdbserver.database.windows.net"; // update me
+    	String hostName = "restaurantdbserver.database.windows.net"; // update me
         String dbName = "MusicDb"; // update me
         String user = "pushpinder"; // update me
         String password = "Password123"; // update me
@@ -43,6 +46,6 @@ public class App
         catch(SQLException ex) {
         	ex.printStackTrace();
         }
-       
+
     }
 }
