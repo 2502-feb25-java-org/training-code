@@ -64,12 +64,14 @@ class ReflectionDemo {
         
         //3. retrieve all methods declared including private ones
         // returns an array of Method objects reflecting all the methods declared by the class or interface represented by this Class object.
+        //.getMethods will return only public methods
         Method[] methods = clsObj.getDeclaredMethods();
         for (Method method : methods) {
             System.out.println("Method- " + method.getName());
         }
         //4. retrieve all fields declared including private ones
         Field[] fields = clsObj.getDeclaredFields();
+
         for (Field field : fields) {
             System.out.println("Field- " + field);
         }
