@@ -26,7 +26,12 @@ class TestCheck {
     private void M3() {
         System.out.println("Inside Private Method");
     }
-
+    public int add(int a, int b){
+        return a+b;
+    }
+    public long multiply(long a, long b){
+        return a*b;
+    }
 }
 
 class ReflectionDemo {
