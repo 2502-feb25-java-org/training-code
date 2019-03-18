@@ -140,7 +140,7 @@
   + `.equals()` - tests to see if the two objects being compared to each other are equivalent, but they need not be the exact same instance of the same object.
 * What are functional interfaces?
   + Functional interfaces only have one method, and can be used in conjuntion with lambdas
-51. What are lambdas?
+* What are lambdas?
   + Like anonymous functions, they allow implementation of functional interfaces directly without creating a class
 * `throw` vs `throws` vs `Throwable`?
   + `Throwable` - the root interface of exceptions, allow a class to be "thrown"
