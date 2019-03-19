@@ -4,8 +4,7 @@ public class VariableScopes {
 	
 	/*
 	 * the scope of a variable is simply 
-	 * where the variable is accessible 
-	 * within a class
+	 * where the variable is declared within a class 
 	 * 
 	 * instance/object - accessible to all INSTANCE METHODS
 	 *  cannot access instance scoped entities from non 
@@ -18,6 +17,14 @@ public class VariableScopes {
 	 * block - within curly braces(loops, if statements, 
 	 * 	static blocks, etc)
 	 */
+	
+	//instance scope 
+	int variable;
+	
+	//class or STATIC scope 
+	static int x;
+	
+	
 	
 
 }
