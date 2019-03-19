@@ -1,6 +1,9 @@
 package com.revature.oop;
 
-public class Inheritance implements A, B {
+public class Inheritance extends Parent implements A, B {
+	
+	
+	
 
 	@Override
 	public void abstractMethod() {
@@ -17,6 +20,12 @@ public class Inheritance implements A, B {
 				+ "the inheritance class");
 	}
 
+}
+
+class Parent{
+	static void testingMoreStatic() {
+		System.out.println("test");
+	}
 }
 
 interface A{
@@ -39,9 +48,9 @@ interface A{
 
 interface B{
 	
-	static void testStatic() {
-		System.out.println("interface B  testStatic");
-	}
+//	static void testStatic() {
+//		System.out.println("interface B  testStatic");
+//	}
 	default void testDefault() {
 		System.out.println("interface B testDefault");
 	}
