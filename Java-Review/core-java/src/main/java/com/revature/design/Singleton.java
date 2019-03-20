@@ -29,6 +29,7 @@ public class Singleton {
 				+ "executes as soon as the class "
 				+ "is loaded ");
 	}
+	
 	private static Singleton instance
 		= new Singleton();
 	

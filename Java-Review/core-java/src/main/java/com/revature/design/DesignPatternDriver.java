@@ -1,11 +1,23 @@
 package com.revature.design;
 
+import java.util.Scanner;
+
 public class DesignPatternDriver {
 
 	
 	
 	public static void main(String[] args) {
-		eagerVSLazy();
+		factory();
+	}
+	
+	static void factory() {
+		System.out.println("Hey! What kind of dessert do you want?");
+		
+		Scanner scanner = new Scanner(System.in);
+		String dessert = scanner.nextLine();
+		
+		Dessert des = Factory.getDessert(dessert);
+		System.out.println(des.bake());
 	}
 	
 	static void eagerVSLazy() {
