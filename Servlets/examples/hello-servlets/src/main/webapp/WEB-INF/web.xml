@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>hello-servlets</display-name>
+
+<!-- 
+	Welcome to the land of web apps!
+	
+	In Java Maven projects, when we package an app as a .war, we need a
+	deployment descriptor AKA the web.xml 
+	this will always be located in the src>main>webapp>WEB-INF folder
+	
+	This will contain information about how we intend for this app 
+	to operate on the web
+	
+	In order to use servlets, we must map them here (or with annotations
+	which we will learn later)
+ -->
+ 
+ <servlet>
+	<servlet-name>MyFirstServlet</servlet-name>
+	<servlet-class>com.revature.servlets.HelloServlet</servlet-class> 	
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>MyFirstServlet</servlet-name>
+ 	<url-pattern>/hello</url-pattern>
+ </servlet-mapping>
+ 
+
+</web-app>
