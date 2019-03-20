@@ -45,5 +45,15 @@ xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.co
  	<url-pattern>/hello</url-pattern>
  </servlet-mapping>
  
+ 
+ <servlet>
+ 	<servlet-name>MyHttp</servlet-name>
+ 	<servlet-class>com.revature.servlets.MyHttpServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+ 	<servlet-name>MyHttp</servlet-name>
+ 	<url-pattern>/http</url-pattern>
+ </servlet-mapping>
 
 </web-app>
