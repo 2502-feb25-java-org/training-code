@@ -53,7 +53,7 @@ xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.co
  
  <servlet-mapping>
  	<servlet-name>MyHttp</servlet-name>
- 	<url-pattern>/http</url-pattern>
+ 	<url-pattern>/httpReq</url-pattern>
  </servlet-mapping>
 
 </web-app>
