@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>hello-servlets</display-name>
 
+ 
 <!-- 
 	Welcome to the land of web apps!
 	
@@ -16,9 +18,26 @@
 	which we will learn later)
  -->
  
+ 
+ <!-- SERVLET CONTEXT
+ 	parameter(s) applied to every servlet within the context
+ 	of our application -->
+ 	
+ 	<context-param>
+ 		<param-name>environmentVar</param-name>
+ 		<param-value>dummy data - this is an example of servlet context</param-value>
+ 	</context-param>
+ 
  <servlet>
 	<servlet-name>MyFirstServlet</servlet-name>
-	<servlet-class>com.revature.servlets.HelloServlet</servlet-class> 	
+	<servlet-class>com.revature.servlets.HelloServlet</servlet-class> 
+	<!-- SERLVET CONFIG
+		parameter(s) applied to a particular servlet -->
+	<init-param>
+		<param-name>helloConfig</param-name>
+		<param-value>Servlet specific parameter -- servlet config</param-value>
+	</init-param>	
+	<load-on-startup>1</load-on-startup>
  </servlet>
  
  <servlet-mapping>
