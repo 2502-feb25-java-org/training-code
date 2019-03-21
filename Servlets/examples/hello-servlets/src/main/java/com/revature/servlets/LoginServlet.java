@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -43,6 +44,13 @@ public class LoginServlet extends HttpServlet{
 			if(inputUser.getPassword().equals(logged.getPassword())) {
 				//SUCCESS
 				out = mapper.writeValueAsString(logged);
+				
+				//add user to my httpsession 
+				HttpSession session = req.getSession();
+				log.info("CREATED SESSION " + session.getId() + " AT " + session.getCreationTime());
+				
+				//append / add user object to session 
+				session.setAttribute("user", logged);
 			}
 			else {
 				//bad
