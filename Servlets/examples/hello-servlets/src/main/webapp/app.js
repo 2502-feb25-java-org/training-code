@@ -21,17 +21,18 @@ function loadLandingView(){
 				//success
 				//we know that our response will be HTML
 				$('#view').html(xhr.responseText);
-				$('#login').on('click', login);
+				
 				//ADD EVENT LISTENERS TO OUR HTML 
+				$('#login').on('click', loginUser);
 			}
 		
 		}
 	}
-	xhr.open("GET", "loadView");
+	xhr.open("GET", "landing.view");
 	xhr.send();
 }
 
-function login(){
+function loginUser(){
 	var name = $('#username').val();
 	var pw = $('#password').val();
 	var user = {
@@ -40,9 +41,9 @@ function login(){
 	};
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function(){
-		
+		//get response body and console.log it 
 	}
-	xhr.open("POST", login);
+	xhr.open("POST", "login");
 	xhr.setRequestHeader("Content-type", "application/json");
 	xhr.send(JSON.stringify(user));
 	

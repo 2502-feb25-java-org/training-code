@@ -17,3 +17,18 @@ This application will cover the basics of Java Servlets, which allow us to proce
 	* Create servlet classes 
 		* create class that extends either GenericServlet or HttpServlet
 		* follow guidelines in this application's web.xml
+
+#### Topics Covered:
+* How to create a servlet
+* servlet lifecycle
+* GenericServlet vs HttpServlet
+* contents of the web.xml
+* ServletConfig
+* ServletContext
+* @WebServlet
+* HttpVerbs 
+* Dealing with form data in servlets
+* AJAX review
+* use of jQuery to select/manipulate DOM elements 
+* redirecting and forwarding 
+* session management 
