@@ -42,6 +42,18 @@ function loginUser(){
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function(){
 		//get response body and console.log it 
+		if(xhr.readyState==4 && xhr.status==200){
+			var user = JSON.parse(xhr.responseText);
+			console.log(xhr.getAllResponseHeaders());
+			if(user == null){
+				//not logged in
+			}
+			else{
+				//logged in . do things 
+				console.log(user);
+			}
+		}
+		
 	}
 	xhr.open("POST", "login");
 	xhr.setRequestHeader("Content-type", "application/json");
