@@ -94,17 +94,25 @@
               <hr>
               <h4>Bought items:</h4>
               <ul id="bought">
-                  
+
               </ul>
 
               <script>
                   window.onload = function(){
+                      console.log(document.getElementById('newItem'));
+                      console.log($('#newItem'));
                     $('#add').on('click', function(){
                         var text = $('#newItem').val();
+                        
                         var listItem = $(`<li>${text}</li>`);
 
                         $('#toBuy').append(listItem);
+                        $('#newItem').val('');
                     });
+
+                    $('#toBuy').on('click', 'li', function(){
+                        $('#bought').append(this);
+                    })
                   }
               </script>
     </body>
