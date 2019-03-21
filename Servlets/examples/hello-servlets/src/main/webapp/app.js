@@ -1,4 +1,5 @@
 window.onload = function(){
+	console.log('app loading..');
 	loadLandingView();
 }
 
@@ -15,10 +16,12 @@ function loadLandingView(){
 	xhr.onreadystatechange = function(){
 		//here is where we  manipulate our response.. whenever we get it 
 		if(xhr.readyState==4){
+			console.log('response received');
 			if(xhr.status==200){
 				//success
 				//we know that our response will be HTML
 				$('#view').html(xhr.responseText);
+				//ADD EVENT LISTENERS TO OUR HTML 
 			}
 			if(xhr.status > 399){
 				//some sort of error 
