@@ -73,14 +73,15 @@ public class LoadViewServlet extends HttpServlet{
 	private String getResource(String uri) {
 		String resource = "partials/";
 		switch(uri) {
-		case "/hello-servlets/landing.view" : {
+		case "/hello-servlets/landing.view" : 
 			resource+="landing.html";
 			break;
-		}
+
+		case "/hello-servlets/home.view" :
+			resource+="homepage.html";
+			break;
 
 		}
-
 		return resource;
 	}
-
 }

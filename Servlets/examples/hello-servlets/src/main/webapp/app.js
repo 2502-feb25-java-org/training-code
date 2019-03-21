@@ -24,12 +24,17 @@ function loadLandingView(){
 				
 				//ADD EVENT LISTENERS TO OUR HTML 
 				$('#login').on('click', loginUser);
+				$('#goToRegister').on('click', loadRegisterView);
 			}
 		
 		}
 	}
 	xhr.open("GET", "landing.view");
 	xhr.send();
+}
+
+function loadRegisterView(){
+	
 }
 
 function loginUser(){
@@ -46,11 +51,13 @@ function loginUser(){
 			var user = JSON.parse(xhr.responseText);
 			console.log(xhr.getAllResponseHeaders());
 			if(user == null){
-				//not logged in
+				//not logged in -- tell user about invalid credentials 
+				$('#message').html('Sorry! Invalid credentials!');
 			}
 			else{
 				//logged in . do things 
 				console.log(user);
+				loadHomeView(user);
 			}
 		}
 		
@@ -58,5 +65,21 @@ function loginUser(){
 	xhr.open("POST", "login");
 	xhr.setRequestHeader("Content-type", "application/json");
 	xhr.send(JSON.stringify(user));
+	
+}
+
+
+function loadHomeView(user){
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.responseText){
+			$('#view').html(xhr.responseText);
+			$('#name').html(user.username);
+			$('#bio').html(user.bio);
+		}
+	}
+	xhr.open("GET", "home.view");
+	xhr.send();
 	
 }
