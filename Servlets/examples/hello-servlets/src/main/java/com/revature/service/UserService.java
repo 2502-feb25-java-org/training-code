@@ -17,10 +17,10 @@ public class UserService {
 	 */
 	
 	private static List<User> users = new ArrayList<User>();
-	
+	private static int id = 3;
 	static {
-		users.add(new User("genesis", "123", "awesome trainer. she's great"));
-		users.add(new User("patrick", "manager", "he manages things"));
+		users.add(new User(1, "genesis", "123", "awesome trainer. she's great"));
+		users.add(new User(2, "patrick", "manager", "he manages things"));
 	}
 	
 	public List<User> getAll(){
@@ -40,5 +40,16 @@ public class UserService {
 		.filter( u -> u.getUsername().equalsIgnoreCase(name))
 		.findFirst()
 		.orElse(null);
+	}
+	
+	public User addUser(User u) {
+		if(getByUsername(u.getUsername())==null) {
+			u.setId(id++);
+			users.add(u);
+			return u;
+		}
+		else {
+			return null;
+		}
 	}
 }
