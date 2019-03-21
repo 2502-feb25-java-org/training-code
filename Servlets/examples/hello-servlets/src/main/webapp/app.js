@@ -21,14 +21,29 @@ function loadLandingView(){
 				//success
 				//we know that our response will be HTML
 				$('#view').html(xhr.responseText);
+				$('#login').on('click', login);
 				//ADD EVENT LISTENERS TO OUR HTML 
 			}
-			if(xhr.status > 399){
-				//some sort of error 
-			}
+		
 		}
 	}
-	
 	xhr.open("GET", "loadView");
 	xhr.send();
+}
+
+function login(){
+	var name = $('#username').val();
+	var pw = $('#password').val();
+	var user = {
+			username: name, 
+			password: pw
+	};
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		
+	}
+	xhr.open("POST", login);
+	xhr.setRequestHeader("Content-type", "application/json");
+	xhr.send(JSON.stringify(user));
+	
 }

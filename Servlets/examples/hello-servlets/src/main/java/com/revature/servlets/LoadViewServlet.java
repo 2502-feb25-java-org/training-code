@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/loadView")
-public class LoadViewServlet extends HttpServlet{
+import org.apache.log4j.Logger;
 
-	
+@WebServlet("*.view")
+public class LoadViewServlet extends HttpServlet{
+	private static Logger log = Logger.getLogger(LoadViewServlet.class);
+
 	/* 
 	 * 
 	 * Here, we will FORWARD html pages as a response 
@@ -39,14 +41,14 @@ public class LoadViewServlet extends HttpServlet{
 	    - in sum, we see a url change for client, good for login
 	    - new req/resp pair 
 	    - resp.sendRedirect();
-	*/
-	
+	 */
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		
-		/* FORWARDS
-        
+
+		/* 
+		 * FORWARDS
 		 * The HttpServletRequest interface has a method, getRequestDispatcher(),
 		 * that returns a RequestDispatcher interface, which has a method, forward()
 		 * to forward the request to another path
@@ -54,10 +56,31 @@ public class LoadViewServlet extends HttpServlet{
 		 * located at the given path
 		 * The object can be used to forward a request to the resource or 
 		 * to include the resource in a response 
+		 * 
+		 * 
+		 * FRONT CONTROLLER DESIGN PATTERN 
+		 * Design pattern in servlets where a single servlet takes in all requests 
+		 * (or all requests of a particular pattern) and dispatches them to appropriate 
+		 * help methods/classes 
 		 */
-		
-		req.getRequestDispatcher("partials/landing.html").forward(req, resp);
-		
+		log.info("REQUEST SENT TO URI: " + req.getRequestURI());
+		//	log.info("URL: " + req.getRequestURL());
+		String resource = getResource(req.getRequestURI());
+		req.getRequestDispatcher(resource).forward(req, resp);
+
 	}
-		
+
+	private String getResource(String uri) {
+		String resource = "partials/";
+		switch(uri) {
+		case "/hello-servlets/landing.view" : {
+			resource+="landing.html";
+			break;
+		}
+
+		}
+
+		return resource;
+	}
+
 }
