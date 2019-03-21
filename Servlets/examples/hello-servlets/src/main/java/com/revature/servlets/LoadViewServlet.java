@@ -64,12 +64,25 @@ public class LoadViewServlet extends HttpServlet{
 		 * help methods/classes 
 		 */
 		log.info("REQUEST SENT TO URI: " + req.getRequestURI());
+		
+		
 		//	log.info("URL: " + req.getRequestURL());
-		String resource = getResource(req.getRequestURI());
-		req.getRequestDispatcher(resource).forward(req, resp);
+		
+		/*
+		 * while we could use our lovely getResource method below, we can also
+		 * simply parse our URI to get the vital info -- our resource name 
+		 * if we send requests to X.view, where X is the name of the intended
+		 * .html partial we want to retrieve, we can streamline the process
+		 * of returning partial views and not need to worry about a switch case
+		 */
+		String uri = req.getRequestURI();
+		String name = uri.substring(16, (uri.length()-5));
+		log.info("TESTING URI " + name);
+		req.getRequestDispatcher("partials/"+name+".html").forward(req, resp);
 
 	}
 
+	//no longer need 
 	private String getResource(String uri) {
 		String resource = "partials/";
 		switch(uri) {
