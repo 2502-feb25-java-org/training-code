@@ -1,0 +1,36 @@
+<p>
+  This is our first component, nested inside of
+  the root component AKA app.component.ts
+
+  Components are entities in angular that manage
+  parts of a webpage or view.
+
+  The are typescript classes decorated with <code>@Component</code>
+  which allow us to tightly bind code with a view
+
+  We can use the Angular CLI to generate components
+  with the <code>ng g c [name]</code> command
+</p>
+
+<h4>Data Binding</h4>
+<i>Angular supports data binding, which is a mechanism for 
+  coordinating parrts of a template(HTML) with parts of a 
+  component(TS)
+</i>
+<br>
+<p>There are a few different types of data binding</p>
+<h5>String Interpolation</h5>
+String interpolation uses double curly braces to display 
+data represented in the component.ts or to evaluate expressions. 
+There are many things we can do with this, however it does have 
+some restrictions, such as we cannot create new objects in 
+template expressions 
+Examples:
+<ul>
+  <li>Math: 2 + 2 = {{ 2 + 2 }}</li>
+  <li>Expressions: 10 > 2 ? = 
+    {{ 10 > 2 ? 'yes' : 'no'}}
+  </li>
+  <li>My name is {{ name }} </li>
+  <li>Time: {{ time }} </li>
+</ul>
