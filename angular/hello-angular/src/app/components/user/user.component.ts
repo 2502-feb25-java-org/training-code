@@ -50,9 +50,10 @@ export class UserComponent implements OnInit {
     temp.username = this.username;
     temp.password = this.password;
     temp.bio = this.bio;
-    this.uService.addUser(temp).subscribe(
+    this.uService.postUser(temp).subscribe(
       u => {
         console.log(u);
+        this.users.push(u);
       },
       error => console.log('ERR')
     ); //still must subscribe to observable

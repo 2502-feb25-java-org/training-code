@@ -50,7 +50,7 @@ export class UserService {
     return this.http.get<User[]>(this.API_URL);
   }
 
-  public addUser(user: User): Observable<User>{
+  public postUser(user: User): Observable<User>{
     return this.http.post<User>(this.API_URL, user, this.httpOptions);
   }
 }

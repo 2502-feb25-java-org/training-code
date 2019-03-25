@@ -17,6 +17,18 @@
       "password": "123",
       "bio": "this is a post request using postman",
       "id": 3
+    },
+    {
+      "username": "revAssociate",
+      "password": "123",
+      "bio": "agloiajoigjo",
+      "id": 4
+    },
+    {
+      "username": "anothertest",
+      "password": "iauheiughiuh",
+      "bio": "iauhiuhi",
+      "id": 5
     }
   ]
 }
