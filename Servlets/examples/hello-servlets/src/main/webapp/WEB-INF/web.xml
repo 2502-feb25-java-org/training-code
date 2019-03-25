@@ -56,4 +56,5 @@ xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.co
  	<url-pattern>/httpReq</url-pattern>
  </servlet-mapping>
 
+
 </web-app>

@@ -1,5 +1,0 @@
-extensions for VS Code for week 1 -
-    Auto Close Tag
-    Auto Rename Tag
-    HTML CSS Support
-    SonarLint

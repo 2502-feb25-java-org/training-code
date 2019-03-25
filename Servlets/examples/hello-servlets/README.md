@@ -32,3 +32,6 @@ This application will cover the basics of Java Servlets, which allow us to proce
 * use of jQuery to select/manipulate DOM elements 
 * redirecting and forwarding 
 * session management 
+* Servlet filters - used for monitoring request and response from client to the servlet, or to modify the request and response, or to audit and log.
+* Servlet listeners - used for lisenting to events in a web containers, such as when you create a session, or place an attribute in an session or if you passivate and activate in another container, to subscribe to these events you can configure listener in web.xml, for example HttpSessionListener
+
