@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
   styleUrls: ['./data-binding.component.css']
 })
-export class DataBindingComponent implements OnInit {
+export class DataBindingComponent implements OnInit, OnChanges {
   name =  'Genesis';
   count = 0;
   time: Date;
@@ -22,6 +22,10 @@ export class DataBindingComponent implements OnInit {
 
   increment() {
     this.count++;
+  }
+
+  ngOnChanges(){
+    console.log('DATABINDING component changes');
   }
   
 }

@@ -11,6 +11,8 @@ import { TestComponent } from './components/test/test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { DirectivesComponent } from './components/directives/directives.component';
+import { SqrootPipe } from './pipes/sqroot.pipe';
+import { UserComponent } from './components/user/user.component';
 /*
 Angular provides its own system of organization of
 code and functionality. This is accomplished by
@@ -57,7 +59,9 @@ about its dependencies
     TestComponent,
     NavbarComponent,
     DataBindingComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    SqrootPipe,
+    UserComponent
   ],
   imports: [
     /*

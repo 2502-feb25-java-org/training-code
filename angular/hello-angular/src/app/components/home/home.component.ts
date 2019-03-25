@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
    templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+
+/*
+Components in angular have lifecycles managed by the framework itself 
+Angular creates and renders components, creates and renders
+their children, checks when the data-bound properties change, then 
+destroys it before removing it from the DOM 
+
+Angular offers lifecycle hooks that provide visibility/access
+to these lifecycle steps and the ability to act when they occur
+*/
+export class HomeComponent implements OnInit, OnDestroy {
 
  
 
@@ -25,9 +35,13 @@ export class HomeComponent implements OnInit {
   the template and component have been fully loaded 
   */
   ngOnInit() {
+    console.log('initializing HOME component')
   }
   /*
   Here is where we can add our class methods
   */
 
+  ngOnDestroy(){
+    console.log('destroying HOME component')
+  }
 }

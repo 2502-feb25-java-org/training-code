@@ -18,10 +18,13 @@ Examples:
   <li>Expressions: 10 > 2 ? = 
     {{ 10 > 2 ? 'yes' : 'no'}}
   </li>
-  <li>My name is {{ name | uppercase}} </li>
-  <li>Time: {{ time | date:'medium' }} </li>
+  <li>My name is {{ name | uppercase  }} </li>
+  <li>Time: {{ time | date:'medium' | uppercase }} </li>
   <li>Here, we are exploring money pipes, 
     1000000 dollars => {{ 1000000 | currency:'CAD' }}
+  </li>
+  <li>Here, we are using our custom square root pipe 
+    to get the square root of 10000 {{ 4 | sqroot }}
   </li>
 </ul>
 

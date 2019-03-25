@@ -34,9 +34,13 @@ export class DirectivesComponent implements OnInit {
     },
     
   ];
+  bool:boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggle(){
+    this.bool = !this.bool;
+  }
 }
