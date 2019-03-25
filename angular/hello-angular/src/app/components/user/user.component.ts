@@ -11,6 +11,9 @@ export class UserComponent implements OnInit {
 
   users: User[];
   test: string;
+  username: string;
+  password: string;
+  bio: string;
   constructor(private uService: UserService) {
     console.log('in USER component constructor. instantiating userservice');
     console.log(uService.name);
@@ -40,6 +43,19 @@ export class UserComponent implements OnInit {
       },
       error => console.log('ERR')
     );
+  }
+
+  addUser(){
+    let temp = new User();
+    temp.username = this.username;
+    temp.password = this.password;
+    temp.bio = this.bio;
+    this.uService.addUser(temp).subscribe(
+      u => {
+        console.log(u);
+      },
+      error => console.log('ERR')
+    ); //still must subscribe to observable
   }
 
 

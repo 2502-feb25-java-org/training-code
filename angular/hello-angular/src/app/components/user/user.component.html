@@ -6,3 +6,10 @@
 <ul>
   <li *ngFor="let u of users"> {{ u.username }} </li> 
 </ul>
+
+<h4>Add Users</h4>
+
+Username: <input type="text" [(ngModel)]="username" class="form-control col-4" ><br>
+Password:   <input type="password" [(ngModel)]="password" class="form-control col-4"> <br>
+Bio: <input type="text" [(ngModel)]="bio" class="form-control col-4"> <br>
+<button class="btn btn-submit" (click) = "addUser()"> Add User!</button>

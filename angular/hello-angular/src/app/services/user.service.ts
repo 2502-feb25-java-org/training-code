@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 
@@ -30,7 +30,10 @@ export class UserService {
   name: string ='This is my singleton user service';
 
   API_URL: string = 'http://localhost:3000/users';
-
+ 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
   /*
   Use DI for our instance of HttpClient, which 
   will allow us to send HTTP requests 
@@ -45,5 +48,9 @@ export class UserService {
  */
   public getUsers(): Observable<User[]>{
     return this.http.get<User[]>(this.API_URL);
+  }
+
+  public addUser(user: User): Observable<User>{
+    return this.http.post<User>(this.API_URL, user, this.httpOptions);
   }
 }

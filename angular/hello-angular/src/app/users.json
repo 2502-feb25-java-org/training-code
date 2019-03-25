@@ -1,16 +1,22 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "gab12",
-            "password": "password",
-            "bio": "genesis is a trainer at revature"
-        },
-        {
-            "id": 2,
-            "username": "testuser",
-            "password": "123",
-            "bio": "test user"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "gab12",
+      "password": "password",
+      "bio": "genesis is a trainer at revature"
+    },
+    {
+      "id": 2,
+      "username": "testuser",
+      "password": "123",
+      "bio": "test user"
+    },
+    {
+      "username": "POSTREQ",
+      "password": "123",
+      "bio": "this is a post request using postman",
+      "id": 3
+    }
+  ]
 }
