@@ -40,8 +40,10 @@ export class UserService {
   public test(): string{
     return 'properly injected service';
   }
-
+/**
+ * "Observables are lazy collections of multiple values over time"
+ */
   public getUsers(): Observable<User[]>{
-
+    return this.http.get<User[]>(this.API_URL);
   }
 }
