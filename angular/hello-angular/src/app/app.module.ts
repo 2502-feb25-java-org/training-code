@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // for using [(ngModel)]
+import { HttpModule } from '@angular/http'; // for HTTP
+import { HttpClientModule } from '@angular/common/http'; // for HTTP
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { TestComponent } from './components/test/test.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 /*
 Angular provides its own system of organization of
 code and functionality. This is accomplished by
@@ -37,17 +41,49 @@ amount of information that the component needs to know
 about its dependencies
 
 */
+
+// @NgModule indicates that the class it decorates is an Angular Module
 @NgModule({
   declarations: [
+    /* The declarations property in the @NgModule decorator 
+    holds an array of classes that are related to a view 
+    There can be three types of classes listed here - 
+    components, directives, and pipes 
+    */
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TestComponent,
+    NavbarComponent
   ],
   imports: [
+    /*
+    imports array holds modules whose classes are needed
+    by classes within this current module 
+    */
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  /**
+    , exports:[]
+    the potential exports array would hold classes that need to be
+    accessible to classes of other modules. In this module, we are 
+    not exporting anything because it is our root module, but we see 
+    this in other modules like our app-routing
+   */
+  providers: [
+    /* 
+    provider array holds all "Services" which are classes that
+    will 'provide' functionality to various places in our application 
+    Services are classes decorated with @Injectable 
+    */
+  ],
+  bootstrap: [
+    /**
+     Bootstrap refers to the root component -- the root view of the app
+      */
+     AppComponent]
 })
 export class AppModule { }
