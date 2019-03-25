@@ -9,21 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  name =  'Genesis';
-  count = 0;
-  time: Date;
-  colorProp = '#123456';
+ 
 
-  items = ['wine', 'steak', 'travel', 'other things that are expensive'];
   /*
   Standard TS constructor to instantiate 
   classes
   */
   constructor() {
-    setInterval(
-      () => {
-        this.time = new Date();
-      }, 1000);
+  
     }
 
 
@@ -36,8 +29,5 @@ export class HomeComponent implements OnInit {
   /*
   Here is where we can add our class methods
   */
- increment() {
-  this.count++;
-}
 
 }

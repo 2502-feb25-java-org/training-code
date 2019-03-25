@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TestComponent } from './components/test/test.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { DirectivesComponent } from './components/directives/directives.component';
 /*
 Angular provides its own system of organization of
 code and functionality. This is accomplished by
@@ -53,7 +55,9 @@ about its dependencies
     AppComponent,
     HomeComponent,
     TestComponent,
-    NavbarComponent
+    NavbarComponent,
+    DataBindingComponent,
+    DirectivesComponent
   ],
   imports: [
     /*

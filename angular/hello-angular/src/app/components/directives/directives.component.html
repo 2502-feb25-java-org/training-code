@@ -1,0 +1,20 @@
+
+<br><hr><br>
+<h3>Direcitves</h3>
+<h6>Angular <b>Directives</b> are special pre-built instructions
+  that typically render HTML code or provide additional functionality</h6>
+  <hr>
+  <p>There are three types of directives:</p>
+  <ul>
+    <li><b>Custom Directives using the decorator <code>@Directive</code>.</b> - This is added to a TypeScript class. Furthermore, The @Component decorator is actually a special form of the @Directive decorator. In practice, you’ll use @Directive when creating your own custom directives. </li>
+    <li><b>Structural Directives</b> - This will add/remove/or update the contents of the DOM. It basically changes the webpage’s layout. <code>*ngFor</code> and <code>*ngIf</code> which we’ll explain in a moment are common examples of structural directives. The following is a quick example of their usage. Again, we’ll dive deeper into their usage in a moment.  </li>
+    <li><b>Attribute Directives</b> - The final form is an attribute directive. An attribute directive will change the look and feel or behavior of an element. Examples of attribute directives are <code>ngModel</code>, <code>ngClass</code>, and <code>ngStyle</code>. We cover ngModel in a separate video when we explain two-way data-binding. Here, you’ll see usage of ngClass.</li>
+  </ul>
+   <b>Structural Directive example *ngFor</b>
+   <i>List of things that Genesis likes:</i>
+   <ul>
+     <li *ngFor="let thing of items">
+       {{ thing.length }} </li>
+   </ul>
+
+   <h1 *ngIf="count%2==0">TESTING IF</h1>
