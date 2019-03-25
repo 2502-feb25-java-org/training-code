@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from '../models/user.model';
 
 /*
 A service is a special class that can contain a value, function or
@@ -27,9 +29,19 @@ So what is dependency injection? Well, at a high level it is a design
 export class UserService {
   name: string ='This is my singleton user service';
 
-  constructor() { }
+  API_URL: string = 'http://localhost:3000/users';
+
+  /*
+  Use DI for our instance of HttpClient, which 
+  will allow us to send HTTP requests 
+  */
+  constructor(private http: HttpClient) { }
 
   public test(): string{
     return 'properly injected service';
+  }
+
+  public getUsers(): Observable<User[]>{
+
   }
 }
