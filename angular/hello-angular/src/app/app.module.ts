@@ -13,6 +13,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { DirectivesComponent } from './components/directives/directives.component';
 import { SqrootPipe } from './pipes/sqroot.pipe';
 import { UserComponent } from './components/user/user.component';
+import { UserService } from './services/user.service';
 /*
 Angular provides its own system of organization of
 code and functionality. This is accomplished by
@@ -87,6 +88,7 @@ about its dependencies
     will 'provide' functionality to various places in our application 
     Services are classes decorated with @Injectable 
     */
+   UserService
   ],
   bootstrap: [
     /**

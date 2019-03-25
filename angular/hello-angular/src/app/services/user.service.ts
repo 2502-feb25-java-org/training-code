@@ -25,6 +25,11 @@ So what is dependency injection? Well, at a high level it is a design
   providedIn: 'root'
 })
 export class UserService {
+  name: string ='This is my singleton user service';
 
   constructor() { }
+
+  public test(): string{
+    return 'properly injected service';
+  }
 }
