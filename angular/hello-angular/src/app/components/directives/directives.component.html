@@ -12,9 +12,23 @@
   </ul>
    <b>Structural Directive example *ngFor</b>
    <i>List of things that Genesis likes:</i>
-   <ul>
-     <li *ngFor="let thing of items">
-       {{ thing.length }} </li>
+   <ul *ngFor="let thing of items"
+   [ngSwitch]="thing.length">
+     <li *ngSwitchCase="4"> FOUR </li>
+     <li *ngSwitchDefault> {{thing}}</li>
    </ul>
 
-   <h1 *ngIf="count%2==0">TESTING IF</h1>
+   <hr>
+   <br>
+   Display every employee in my list of employees, 
+   and have different properties based on their role
+
+   <ul *ngFor="let e of employees"
+   [ngSwitch]="e.role">
+        <li *ngSwitchCase="'Trainer'"
+        class="text-warning">{{ e.name }} is a trainer</li>
+        <li *ngSwitchCase="'Associate'" class="text-success">
+          {{e.name}}
+        </li>
+  </ul>
+ 
