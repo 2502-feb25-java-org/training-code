@@ -32,5 +32,15 @@ public class UserService {
 			}
 		}
 	}
+	
+	public User addUser(User u) {
+		if(dao.getByUsername(u.getUsername())==null) {
+			//now we know the username is unique. can add user!
+			return dao.addUser(u);
+		}
+		else {
+			return null; //username already used
+		}
+	}
 
 }
