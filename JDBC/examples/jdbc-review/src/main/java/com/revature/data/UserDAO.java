@@ -1,6 +1,7 @@
 package com.revature.data;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -38,6 +39,7 @@ public class UserDAO {
 				ConnectionFactory.getInstance().getConnection()){
 			
 			 String query = "select * from demo_user";
+			 // query = "select * from demo_user where lower(username) = " + username;
 			 
 			 //STATEMENT interface 
 			 Statement statement = conn.createStatement();
@@ -57,6 +59,31 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return users;
+	}
+	
+	/*
+	 * Prepared Statement 
+	 */
+	
+	public User getByUsername(String username) {
+		User u = null;
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()){
+			String sql = "select * from demo_user where lower(username) = ?  ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, username.toLowerCase());
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				u =  new User(
+						 rs.getInt(1),
+						 rs.getString("USERNAME"),
+						 rs.getString(3),
+						 rs.getString("BIO"));
+			}
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return u;
 	}
 
 }
