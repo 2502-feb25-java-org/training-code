@@ -1,6 +1,7 @@
 package com.revature.main;
 
 import com.revature.data.UserDAO;
+import com.revature.model.User;
 import com.revature.service.UserService;
 
 public class App {
@@ -10,6 +11,6 @@ public class App {
 //		System.out.println(dao.getUsers());
 		
 		UserService service = new UserService();
-		System.out.println(service.logIn("genesisb", "123"));
+		System.out.println(service.addUser(new User("testuser", "admin", "administrative test user")));
 	}
 }
