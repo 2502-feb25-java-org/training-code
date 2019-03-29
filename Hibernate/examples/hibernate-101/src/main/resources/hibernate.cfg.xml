@@ -6,11 +6,10 @@
 	<session-factory>
 	<!-- Standard properties needed to establish a connection w DB -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-		<property name="hibernate.connection.driver_class">
-			oracle.jdbc.driver.OracleDriver</property>
-		<property name="hibernate.connection.url">${HIBERNATE_DB_HOST}</property>
-		<property name="hibernate.connection.username">${HIBERNATE_USERNAME}</property>
-		<property name="hibernate.connection.password">${HIBERNATE_PASSWORD}</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url"></property>
+		<property name="hibernate.connection.username"></property>
+		<property name="hibernate.connection.password"></property>
 		
 	<!--  show HQL commands as they are carried out on the DB in our console, format them -->
 		<property name="show_sql">true</property>
@@ -29,7 +28,7 @@
         create-drop: creates the schema, destroying all 
         previously existing info if there. Also drops the 
         schema when the SessionFactory is closed -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		
 		<!-- must indicate which classes will be mapped as entities here -->
 		<mapping class="com.revature.model.User"/>

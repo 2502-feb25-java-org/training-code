@@ -54,15 +54,18 @@ public class ConnectionUtil {
 			 * object. SessionFactorys are immutable and do not retain 
 			 * any association back to the Configuration.
 			 */
-			Configuration hibConfig = new Configuration().configure();
-			
+			Configuration config = new Configuration().configure();
+//			config.setProperty("hibernate.connection.url", System.getenv("HIBERNATE_DB_HOST"));
+//			config.setProperty("hibernate.connection.username",System.getenv("HIBERNATE_USERNAME"));
+//			config.setProperty("hibernate.connection.password", System.getenv("HIBERNATE_PASSWORD"));
+				
 			//http://docs.jboss.org/hibernate/orm/4.3/topical/html/registries/ServiceRegistries.html
 			
 			ServiceRegistry registry = new ServiceRegistryBuilder()
-					.applySettings(hibConfig.getProperties())
+					.applySettings(config.getProperties())
 					.buildServiceRegistry();
 			
-			sf = hibConfig.buildSessionFactory(registry);
+			sf = config.buildSessionFactory(registry);
 		}
 		return sf;
 	}
