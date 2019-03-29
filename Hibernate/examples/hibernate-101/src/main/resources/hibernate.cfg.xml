@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	<!-- Standard properties needed to establish a connection w DB -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">${HIBERNATE_DB_HOST}</property>
+		<property name="hibernate.connection.username">${HIBERNATE_USERNAME}</property>
+		<property name="hibernate.connection.password">${HIBERNATE_PASSWORD}</property>
+		
+	<!--  show HQL commands as they are carried out on the DB in our console, format them -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+	<!-- CREATE/UPDATE OUR SCHEMA
+		create: create the schema, the data previously 
+        present in these tables if they exist would no longer
+        exist as the app would drop tables then recreate them
+        
+        update: updates the schema with given values 
+        
+        validate: validates the schema, makes no changes 
+        in db 
+        
+        create-drop: creates the schema, destroying all 
+        previously existing info if there. Also drops the 
+        schema when the SessionFactory is closed -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		
+		<!-- must indicate which classes will be mapped as entities here -->
+		<mapping class="com.revature.model.User"/>
+		
+	</session-factory>
+</hibernate-configuration>

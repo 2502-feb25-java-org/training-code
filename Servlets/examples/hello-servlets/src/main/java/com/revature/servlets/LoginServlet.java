@@ -21,6 +21,19 @@ public class LoginServlet extends HttpServlet{
 	
 	private static Logger log = Logger.getLogger(LoginServlet.class);
 	static UserService service = new UserService();
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		if(session.getAttribute("user")!= null) {
+			//this means user is logged in, redirect to some other page 
+			User u = (User) session.getAttribute("user");
+			resp.sendRedirect("users");
+			session.removeAttribute("user");
+			session.invalidate();
+		}
+		
+	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
