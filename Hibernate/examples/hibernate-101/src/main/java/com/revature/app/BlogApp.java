@@ -24,8 +24,8 @@ public class BlogApp {
 	
 	static void loadAndFollow() {
 		User toFollow = uDao.get(21);
-		User follower1 = uDao.get(5);
-		User follower2 = uDao.get(6);
+		User follower1 = uDao.get(1);
+		User follower2 = uDao.get(2);
 		
 		uDao.follow(follower1, toFollow);
 		uDao.follow(follower2, toFollow);
