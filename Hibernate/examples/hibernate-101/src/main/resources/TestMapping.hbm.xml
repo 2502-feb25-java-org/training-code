@@ -14,6 +14,9 @@
 		<id name="id" column="FOOD_ID">
 			<generator class="native"/>			
 		</id>
+		
+		<!-- Must include a property tag for each instance variable you wish to map 
+		as a column -->
 		<property name="data" type="string" column="FOOD_TYPE"></property>
 	</class>
 

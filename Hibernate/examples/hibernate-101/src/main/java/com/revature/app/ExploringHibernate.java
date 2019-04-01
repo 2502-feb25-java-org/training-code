@@ -10,6 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
+import com.revature.data.FoodDao;
+import com.revature.model.TestMapping;
 import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
 
@@ -17,11 +19,21 @@ public class ExploringHibernate {
 	
 	static ConnectionUtil util = ConnectionUtil.getInstance();
 	final static Logger log = Logger.getLogger(ExploringHibernate.class);
+	static FoodDao foodDao = new FoodDao();
 	
 	public static void main(String[] args) {
-		System.out.println(findByUsername("test"));
+		System.out.println(saveFood("ribeyes", "great steak"));
 		
 	}
+	
+	
+	/*
+	 * Exploring working with hibernate mapping files 
+	 */
+	public static TestMapping saveFood(String foodName, String testData) {
+		return foodDao.addFood(foodName, testData);
+	}
+	
 	
 	/*
 	 * SAVE
