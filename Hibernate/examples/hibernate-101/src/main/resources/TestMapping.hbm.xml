@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+	<class name="com.revature.model.TestMapping" table="FOOD">
+		<!-- the class tag must contain an id element 
+		The ID column has a special generator tag used to 
+		automatically increment primary keys 
+		The attribute of class on this generator will be set to native
+		to let Hibernate pick its generation strategy 
+		based on the capabilities of the underlying DB-->
+		
+		<id name="id" column="FOOD_ID">
+			<generator class="native"/>			
+		</id>
+		<property name="data" type="string" column="FOOD_TYPE"></property>
+	</class>
+
+</hibernate-mapping>

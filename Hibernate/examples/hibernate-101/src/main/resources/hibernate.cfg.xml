@@ -32,6 +32,7 @@
 		
 		<!-- must indicate which classes will be mapped as entities here -->
 		<mapping class="com.revature.model.User"/>
+		<mapping resource="TestMapping.hbm.xml"/>
 		
 	</session-factory>
 </hibernate-configuration>
