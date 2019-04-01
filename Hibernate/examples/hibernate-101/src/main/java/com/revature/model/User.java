@@ -84,6 +84,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public Set<User> getFollowing() {
+		return following;
+	}
+
+	public void setFollowing(Set<User> following) {
+		this.following = following;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
