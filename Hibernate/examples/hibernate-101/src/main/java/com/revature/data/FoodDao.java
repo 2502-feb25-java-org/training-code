@@ -8,7 +8,7 @@ import com.revature.util.ConnectionUtil;
 
 public class FoodDao {
 
-	static ConnectionUtil util = ConnectionUtil.getInstance();
+	ConnectionUtil util = ConnectionUtil.getInstance();
 
 	public TestMapping addFood(String food, String test) {
 		TestMapping obj = new TestMapping();

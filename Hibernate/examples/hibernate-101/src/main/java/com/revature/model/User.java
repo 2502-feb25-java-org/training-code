@@ -1,10 +1,18 @@
 package com.revature.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 /*
@@ -35,6 +43,13 @@ public class User {
 	
 	@Column(nullable=false)
 	private String password;
+	
+	
+	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinTable(name="FOLLOWING", //@JoinTable is used to define the junction table
+	joinColumns=@JoinColumn(name="USER_ID"), //specify the column with the main entity
+	inverseJoinColumns=@JoinColumn(name="FOLLOWS")) //inverse side of the relationship 
+	private Set<User> following = new HashSet<User>(); //will represent people I follow 
 	
 	public User() {}
 	
