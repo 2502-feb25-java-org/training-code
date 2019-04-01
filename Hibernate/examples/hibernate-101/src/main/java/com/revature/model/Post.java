@@ -9,8 +9,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+/*
+ * If there are a lot of queries in HQL or native SQL, there can 
+ * be a lot of code throughout the application in a messy way
+ * Hibernate's named queries allow us to define HQL or native SQL 
+ * queries in a central location and use them anywhere in the code 
+ */
+@NamedQueries({
+	@NamedQuery(name="getLongPosts", 
+			query="FROM Post WHERE length(body)>250")
+})
+
 
 @Entity
 @Table(name="BLOG_POST")

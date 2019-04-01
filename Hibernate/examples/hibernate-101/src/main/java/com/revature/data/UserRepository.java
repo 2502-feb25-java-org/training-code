@@ -91,6 +91,23 @@ public class UserRepository {
 		}
 	}
 	
+	public void unfollow(User user, User toUnfollow) {
+		Session session = util.getSession();
+		try {
+			Transaction tx = session.beginTransaction();
+			for(User u : user.getFollowing()) {
+				if(u.getId() == toUnfollow.getId()) {
+					user.getFollowing().remove(u);
+				}
+			}
+			session.update(user); 
+			tx.commit();
+		}finally {
+			session.close();
+		}
+	}
+	
+	
 	
 	
 	

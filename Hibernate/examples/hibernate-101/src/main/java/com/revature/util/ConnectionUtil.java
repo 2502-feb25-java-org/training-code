@@ -59,7 +59,7 @@ public class ConnectionUtil {
 			config.setProperty("hibernate.connection.url", System.getenv("HIBERNATE_DB_HOST"));
 			config.setProperty("hibernate.connection.username",System.getenv("HIBERNATE_USERNAME"));
 			config.setProperty("hibernate.connection.password", System.getenv("HIBERNATE_PASSWORD"));
-			config.setProperty("hibernate.connection.dialect", "org.hibernate.dialect.Oracle10gDialect");
+			config.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 				
 			config.configure();
 			//http://docs.jboss.org/hibernate/orm/4.3/topical/html/registries/ServiceRegistries.html
