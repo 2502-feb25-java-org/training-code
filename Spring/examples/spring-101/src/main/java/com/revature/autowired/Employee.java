@@ -1,9 +1,17 @@
 package com.revature.autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype") //how we can give our beans non singleton scope
 public class Employee {
 	
 	private int id;
 	private String name;
+	
+	@Autowired
 	private Department dept;
 	
 	public Employee() {}

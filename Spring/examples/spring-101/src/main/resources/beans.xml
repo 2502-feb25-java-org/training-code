@@ -30,12 +30,18 @@
 		</bean>
 		
 		
-		<!-- Exploring autowiring with XML -->
+		<!-- Exploring autowiring with XML 
 		<bean id="employee" class="com.revature.autowired.Employee" autowire="byName" scope="prototype">
 		</bean>
 		
 		<bean id="dept" class="com.revature.autowired.Department" scope="prototype">
 			<property name="name" value="Training Department"/>
 		</bean>
+		
+		-->
+		
+		<!-- USING ANNOTATIONS!!!!!!!!!!!!!!!!! -->
+		<context:annotation-config/>
+		<context:component-scan base-package="com.revature" />
 
 </beans>
