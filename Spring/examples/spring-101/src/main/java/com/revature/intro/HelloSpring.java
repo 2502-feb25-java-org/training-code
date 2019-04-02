@@ -25,7 +25,7 @@ public class HelloSpring {
 	public HelloSpring(String message) {
 		super();
 		this.message = message;
-		System.out.println("CALLING CONSTRUCTOR WITH FIELDS");
+		//System.out.println("CALLING CONSTRUCTOR WITH FIELDS");
 	}
 
 	public String getMessage() {

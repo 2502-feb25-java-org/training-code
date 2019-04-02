@@ -18,5 +18,24 @@
 		-->
 		<constructor-arg name="message" value="This is constructor injection!"/> 
 		</bean>
+		
+		
+		<!-- Bean wiring! this is the process of wiring one bean into 
+		another bean -->
+		<bean id="superBean" class="com.revature.intro.ParentBean">
+		<!-- When manually wiring beans, we don't use value as if 
+		we are injecting a string or other property type, we use 
+		ref to indicate that we are referencing another bean -->
+			<property name="dependency" ref="myFirstBean"/>
+		</bean>
+		
+		
+		<!-- Exploring autowiring with XML -->
+		<bean id="employee" class="com.revature.autowired.Employee" autowire="byName" scope="prototype">
+		</bean>
+		
+		<bean id="dept" class="com.revature.autowired.Department" scope="prototype">
+			<property name="name" value="Training Department"/>
+		</bean>
 
 </beans>
