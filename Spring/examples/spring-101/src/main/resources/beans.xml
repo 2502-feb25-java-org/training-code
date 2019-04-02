@@ -11,5 +11,12 @@
 		typically named beans.xml or context.xml, but 
 		can be named anything when making a simple .jar app 
 		as long as we refer to the proper file in our config class -->
+		
+		<bean id="myFirstBean" class="com.revature.intro.HelloSpring">
+		<!-- 
+			<property name="message" value="This is setter injection! Welcome to Spring!"/>
+		-->
+		<constructor-arg name="message" value="This is constructor injection!"/> 
+		</bean>
 
 </beans>
