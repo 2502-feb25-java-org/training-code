@@ -40,6 +40,15 @@
 		
 		-->
 		
+		
+<!-- Exploring the spring bean lifecycle -->
+<bean id="lifecycle" class="com.revature.lifecycle.Lifecycle"
+	init-method="customInit" 
+	destroy-method="customDestroy">
+	<property name="lifecycle"
+		 value="setter injection, setting properties"/>
+</bean>
+		
 		<!-- USING ANNOTATIONS!!!!!!!!!!!!!!!!! -->
 		<context:annotation-config/>
 		<context:component-scan base-package="com.revature" />
