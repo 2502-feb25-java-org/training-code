@@ -28,6 +28,10 @@ public class UserService {
 	
 	@Autowired
 	UserRepository repo;
+	
+	public User getById(int id) {
+		return repo.getById(id);
+	}
 
 	public List<User> getAllUsers(){
 		return repo.getAll();
