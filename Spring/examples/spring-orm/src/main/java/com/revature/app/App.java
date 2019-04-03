@@ -15,7 +15,7 @@ public class App {
 		ApplicationContext context = 
 				new ClassPathXmlApplicationContext("beans.xml");
 		
-		UserService service = (UserService) context.getBean(UserService.class);
+		UserService	 service = (UserService) context.getBean(UserService.class);
 		
 	//	System.out.println(service.getAllUsers());
 		

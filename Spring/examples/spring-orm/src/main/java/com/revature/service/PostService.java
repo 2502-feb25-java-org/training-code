@@ -19,7 +19,6 @@ public class PostService {
 		return repo.save(p);
 	}
 	
-	
 	public List<Post> getByAuthor(User u){
 		return repo.getAllByAuthor(u);
 	}
