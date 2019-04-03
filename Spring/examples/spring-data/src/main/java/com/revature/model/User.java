@@ -69,10 +69,10 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsername() {
+	public String getusername() {
 		return username;
 	}
-	public void setUsername(String username) {
+	public void setusername(String username) {
 		this.username = username;
 	}
 	public String getPassword() {
