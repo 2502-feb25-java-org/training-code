@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- enable application to be annotation driven (look for annotations) -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.revature" ></context:component-scan>
+	
+	<!-- enable Spring to search for @Transactional -->
+	<tx:annotation-driven/>
+	
+	<!-- Configure CONTEXTUAL SESSIONS
+		contextual sessions are how we provide our spring application context
+		with the ability to create sessions with a DB
+		this is the process of wiring 4 beans (or types of beans) together
+		DataSource => SessionFactory => TransactionManager AND our DAOs
+		
+		by doing this, we can use spring to abstract away transaction 
+		management, some boiler plate code, and configuration details
+		away from our JPA tool
+	 -->
+	 
+	 <context:property-placeholder location="classpath:db.properties"/>
+	 
+	 <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	 	<property name="driverClassName" value="${db.driver}" />
+	 	<property name="url" value="${db.url}"/>
+	 	<property name="username" value="${db.username}"/>
+	 	<property name="password" value="${db.password}"/>
+	 </bean>
+	 
+	 <bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"></bean>
+	 
+	 <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"></bean>
+
+
+</beans>
