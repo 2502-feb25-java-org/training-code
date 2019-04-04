@@ -55,16 +55,22 @@ public class UserService {
 	//DELETE
 	public User delete(User u) {
 		int id=-1;
-		for(User user : users) {
-			if(user.getId()==u.getId()) {
-				id=users.indexOf(user);
+//		for(User user : users) {
+//			if(user.getId()==u.getId()) {
+//				id=users.indexOf(user);
+//			}
+//		}
+		for (int i = 0; i < users.size(); i++) {
+			if (users.get(i).getId()==u.getId()) {
+				id = i;
+				break;
 			}
 		}
 		if(id>-1) {
 			users.remove(id);
 			return null; //this means a user was found and deleted
 		}
-		else return u;
+		else return u; //means that user did not exist in list (by id)
 	}
 
 }
