@@ -28,6 +28,7 @@ public class UserService {
 	
 	//CREATE
 	public User save(User u) {
+		if(getByUsername(u.getUsername())!=null) return null; //means user exists. do not add 
 		u.setId(++lastId);
 		users.add(u);
 		return u;
@@ -36,6 +37,12 @@ public class UserService {
 	//READ
 	public List<User> getAll(){
 		return users;
+	}
+	
+	public User getByUsername(String username) {
+		return users.stream().filter(u -> u.getUsername().equalsIgnoreCase(username))
+				.findFirst()
+				.orElse(null);
 	}
 	
 	public User getById(int id) {

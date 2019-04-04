@@ -3,7 +3,11 @@ package com.revature.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,7 +59,29 @@ public class UserController {
 	//GET /users/id
 	//get user by id
 	@RequestMapping(value="/{id}")
-	public User getById(@PathVariable int id) {
-		return service.getById(id);
+	public ResponseEntity<User> getById(@PathVariable int id) {
+		User u =  service.getById(id);
+		if(u == null) {
+			//no user is found.. Http status of no content 
+			return new ResponseEntity(HttpStatus.NO_CONTENT);
+		}else {
+			//return user with status OK
+			return new ResponseEntity<User>(u, HttpStatus.OK);
+		}
+	}
+	
+	//POST /users
+	//add user to list from request body
+	@RequestMapping(method=RequestMethod.POST, 
+			consumes=MediaType.APPLICATION_JSON_VALUE, 
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<User> add(@RequestBody User u){
+		u = service.save(u);
+		if(u == null) {
+			return new ResponseEntity<User>(HttpStatus.CONFLICT);
+		}
+		else {
+			return new ResponseEntity<User>(HttpStatus.CREATED);
+		}
 	}
 }
