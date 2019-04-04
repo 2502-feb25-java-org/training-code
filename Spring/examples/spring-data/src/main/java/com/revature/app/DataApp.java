@@ -18,9 +18,12 @@ public class DataApp {
 		
 	//	User u = new User("SPRING DATA", "IS AWESOME");
 		//repo.save(u);
-		
-		User u = repo.findByUsernameIgnoreCaseAndPassword("spring data", "IS AWESOME");
-		System.out.println(u);
+//		
+//		repo.save(new User("test", "user"));
+//		repo.save(new User("long username here", "password"));
+//		
+//		User u = repo.findByUsernameIgnoreCaseAndPassword("spring data", "IS AWESOME");
+		System.out.println(repo.lengthQuery(2, 10));
 	}
 
 }
