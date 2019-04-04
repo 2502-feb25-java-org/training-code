@@ -13,3 +13,16 @@
 * `@RequestMapping` - Maps a URL pattern, HTTP method, request/response content type, etc to a method or controller. 
 * `@RequestParam` - To be applied in a parameter to bind a request parameter to the method parameter
 
+
+### To recreate this app:
+* Create a new maven project packaged as a .war
+* copy the contents of this pom.xml (need the basic spring core modules, spring mvc, and jackson object mapper, and commons logging -- used for spring logs )
+* Create your web.xml (right click on project -> Java EE tools -> generate deployment descriptor stub)
+* Create your beans.xml INSIDE OF WEB.INF FOLDER. (spring beans configuration file if you have a spring plugin, which you should)
+	* inside of beans.xml, configure spring to be annotation driven.. see beans.xml for deails 
+* Inside of web.xml, configure the following:
+	* Declare our DispatcherServlet as the single servlet in the app
+	* configure context loader listener
+	* configure servlet context params 
+* Create your controllers -- anotate with either @Controller or @RestController 
+* Deploy to Tomcat Server
