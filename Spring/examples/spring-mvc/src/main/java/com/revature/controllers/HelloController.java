@@ -14,5 +14,12 @@ public class HelloController {
 	public String home() {
 		return "Welcome to Spring MVC!";
 	}
+	
+	
+	@RequestMapping(value="/pattern", method=RequestMethod.GET)
+	@ResponseBody
+	public String moreMappings() {
+		return "This is a different GET request";
+	}
 
 }
