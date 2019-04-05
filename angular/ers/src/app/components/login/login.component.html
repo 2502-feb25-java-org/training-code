@@ -1,0 +1,6 @@
+<div class="jumbotron">
+ Username:  <input type="text" placeholder="Username" [(ngModel)]="username" (blur)="checkIfEmpty(username)"> <br>
+ Password:  <input type="password" placeholder="Password" [(ngModel)]="password" (blur)="checkIfEmpty(password)"<br>
+ <button (click)="login()">Log In!</button>
+ {{message}}
+</div>
