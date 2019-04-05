@@ -24,6 +24,8 @@ public class Reimbursement {
 	@SequenceGenerator(name="REIM_ID_GEN", sequenceName="ERS_REIM_ID", allocationSize=1)
 	@GeneratedValue(generator="REIM_ID_GEN", strategy=GenerationType.SEQUENCE)
 	private int id; 
+	
+	@Column(nullable=false)
 	private double amount;
 	
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
