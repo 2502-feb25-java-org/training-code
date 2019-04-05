@@ -37,7 +37,7 @@ public class User {
 	@Column(nullable = false)
 	private String lastName;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.REMOVE, fetch=FetchType.EAGER)
 	@JoinColumn(name="ROLE_ID", nullable=false)
 	private Role role;
 	
