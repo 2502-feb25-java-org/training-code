@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +12,12 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   message: string;
+  users: User[];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.getUsers();
   }
 
   checkIfEmpty(str: string){
@@ -26,7 +30,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+
+  }
+
+  getUsers(){
+    this.userService.getUsers().subscribe(
+      data => {
+        this.users = data;
+        console.log('got user data');
+        console.log(data);
+      },
+      error => console.log('something wrong happened')
+    )
   }
 
 }

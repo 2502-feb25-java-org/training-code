@@ -1,6 +1,15 @@
 <div class="jumbotron">
- Username:  <input type="text" placeholder="Username" [(ngModel)]="username" (blur)="checkIfEmpty(username)"> <br>
- Password:  <input type="password" placeholder="Password" [(ngModel)]="password" (blur)="checkIfEmpty(password)"<br>
+ Username:  <input type="text" placeholder="Username" class="form-control col-4" [(ngModel)]="username" (blur)="checkIfEmpty(username)"> <br>
+ Password:  <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control col-4" (blur)="checkIfEmpty(password)"/><br>
  <button (click)="login()">Log In!</button>
  {{message}}
 </div>
+
+
+<hr>
+TEST 
+
+<!-- testing if we can establish a connection and... success! will be back later -->
+<ul>
+  <li *ngFor="let u of users">{{ u.firstName }} </li>
+</ul>
