@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.revature</groupId>
 	<artifactId>spring-boot-demo</artifactId>
@@ -17,7 +18,13 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
+	<!-- Spring Boot Starters are a set of convenient dependency descriptors 
+		that you can include in your application. You get a one-stop-shop for all 
+		the Spring and related technology that you need without having to hunt through 
+		sample code and copy paste loads of dependency descriptors. For example, 
+		if you want to get started using Spring and JPA for database access just 
+		include the spring-boot-starter-data-jpa dependency in your project, and 
+		you are good to go. -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -29,6 +36,24 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Dev tools is simply a tool for development that allows your spring 
+			boot application to reload your app onto its embedded server after saved 
+			changes automatically instead of you having to restart it yourself. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- Actuators are spring boot subprojects that expose preconfigured endpoints 
+			(with some extra configuration) that give more information about your application 
+			ie /health /info /beans, and more -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
