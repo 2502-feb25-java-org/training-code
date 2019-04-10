@@ -1,0 +1,11 @@
+server:
+  port: 8765
+
+info:
+  description: Exploring Zuul proxy servers
+  
+#need to register each of your services with eureka as follows
+eureka:
+  client:
+    serviceUrl:      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true

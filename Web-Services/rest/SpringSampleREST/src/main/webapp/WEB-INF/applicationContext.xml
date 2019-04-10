@@ -1,0 +1,62 @@
+<!-- @author Peter Alagna -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- Enable Annotations in MVC -->
+	<mvc:annotation-driven />
+	
+	<!-- Enabling static resource locator with /* mapping -->
+	<mvc:resources mapping="/static/**" location="/static/" />
+	
+	<!-- Enable @Transactional -->
+	<tx:annotation-driven />
+	
+	<!-- Package Scan -->
+	<context:component-scan base-package="com.revature.repository" />
+	<context:component-scan base-package="com.revature.service" />
+	<context:component-scan base-package="com.revature.view" />
+	<context:component-scan base-package="com.revature.rest" />
+	<context:component-scan base-package="com.revature.exception" />
+	
+	<!-- Hibernate Integration with Contextual Sessions -->
+	
+	<!-- DataSource (JDBC) -->
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<!-- Remember to try to pull these from environment variables -->
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="HEROES" />
+		<property name="password" value="p4ssw0rd" />
+	</bean>
+	
+	<!-- SessionFactory (Hibernate) -->
+	<bean name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- Manually Injecting DataSource -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- Annotation Mapping -->
+		<property name="packagesToScan" value="com.revature.model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- TransactionManager (Hibernate) -->
+	<!-- Makes all sessions transactions -->
+	<bean name="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<!-- Manually Injection SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

@@ -1,0 +1,24 @@
+<div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{title}}</span>
+    </div>
+    <div class="panel-body">
+    <div class="list-group">
+        <div class="list-group-item list-group-item-demo">
+            <div class="form-group">
+                <input [(ngModel)]="hero.name" placeholder="Name" class="form-control" />
+           </div>
+           <div>
+               <button class="btn btn-primary btn-center" (click)="findHero()">Find</button>
+           </div>
+           <div *ngIf="heroData">
+                {{ heroData.superPower }}
+            </div>
+           <div *ngIf="!heroData">
+               {{ clientMessage.message }}
+           </div>
+        </div>
+    </div>
+</div>
+<div class="panel-footer">
+</div>
