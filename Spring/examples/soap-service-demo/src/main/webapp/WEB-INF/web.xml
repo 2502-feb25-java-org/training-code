@@ -5,6 +5,18 @@
 	version="2.5">
 	<display-name>soap-service-demo</display-name>
 
+<!-- configure web app and spring -->
+
+<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>WEB-INF/beans.xml</param-value>
+</context-param>
+
+<listener>
+	<listener-class>
+		org.springframework.web.context.ContextLoaderListener
+	</listener-class>
+</listener>
 
 	<!-- SOAP application using spring and APACHE CXF follows the front controller 
 		design pattern where we direct all requests to our CXF servlet -->

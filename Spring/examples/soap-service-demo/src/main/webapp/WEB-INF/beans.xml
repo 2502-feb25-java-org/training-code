@@ -7,4 +7,6 @@
 
 <import resource="classpath:META-INF/cxf/cxf.xml" />
 
+<!-- tell spring where to find our service endpoint interface  -->
+
 </beans>
