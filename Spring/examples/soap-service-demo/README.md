@@ -33,3 +33,27 @@ This application will cover what is necessary to create a basic SOAP service.
         </dependency>
 ```
 * Create a Deployment Descriptor and copy the following contents:
+```
+
+<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>WEB-INF/beans.xml</param-value>
+</context-param>
+
+<listener>
+	<listener-class>
+		org.springframework.web.context.ContextLoaderListener
+	</listener-class>
+</listener>
+
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+```
+
+
