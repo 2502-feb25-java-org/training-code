@@ -34,7 +34,6 @@ This application will cover what is necessary to create a basic SOAP service.
 ```
 * Create a Deployment Descriptor and copy the following contents:
 ```
-
 <context-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>WEB-INF/beans.xml</param-value>
@@ -55,5 +54,18 @@ This application will cover what is necessary to create a basic SOAP service.
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 ```
+* Create the Interface of the service you'd like to expose. Annotate it with `@WebService`
+* Create the implementing class of the interface, annotate it with `@WebService(endpointInterface="[interface full name]")`
+* Create a Spring Bean Configuration File in your WEB-INF folder, select the beans, context, and jaxws namespaces and add the following:
+```
+<import resource="classpath:META-INF/cxf/cxf.xml" />
 
+<!-- indicate our service endpoint interface  -->
+
+<jaxws:endpoint
+	implementor="[implementing class]"
+	address="/[endpoint]"
+/>
+```
+* deploy to server and access at localhost:[port]/[context root]
 
