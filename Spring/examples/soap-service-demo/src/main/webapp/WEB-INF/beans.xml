@@ -9,4 +9,7 @@
 
 <!-- tell spring where to find our service endpoint interface  -->
 
+<jaxws:endpoint implementor="com.revature.soap.UserRepository" 
+				address="/user"></jaxws:endpoint>
+
 </beans>
